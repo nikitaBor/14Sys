@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
     semctl(semdes, 0 , SETVAL, atoi(argv[2]));
   }
   else if(!strcmp(argv[1], "-v")){
-    semdes = semget(KEY, 1 , IPC_EXCL|IPC_CREAT|0644);
+    semdes = semget(KEY, 1 , IPC_CREAT|0644);
     printf("Semaphore value: %d\n", semctl(semdes,0,GETVAL));
   }
   else if(!strcmp(argv[1], "-r")){
